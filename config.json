@@ -2,6 +2,12 @@
   "form": {
     "fields": [
       {
+        "label": "Email",
+        "name": "email-id",
+        "type": "email",
+        "required": true
+      },
+      {
         "label": "User Name",
         "name": "user-name",
         "type": "text",
