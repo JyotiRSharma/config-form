@@ -40,3 +40,36 @@
 .read-the-docs {
   color: #888;
 }
+
+body {
+  background-color: black;
+  color: aliceblue;
+}
+
+.output {
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 5rem;
+  border: 2px solid red;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 15rem;
+  margin: 0 auto;
+  gap: 0.5rem;
+}
+
+.form-field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error {
+  color: red;
+  font-size: small;
+  text-align: end;
+  width: 100%;
+  display: block;
+}

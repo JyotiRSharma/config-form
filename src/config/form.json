@@ -5,24 +5,36 @@
         "label": "Email",
         "name": "email-id",
         "type": "email",
+        "error": true,
+        "message": "",
+        "value": "",
         "required": true
       },
       {
         "label": "User Name",
         "name": "user-name",
         "type": "text",
+        "error": true,
+        "message": "",
+        "value": "",
         "required": true
       },
       {
         "label": "Password",
         "name": "password",
         "type": "password",
+        "error": true,
+        "message": "",
+        "value": "",
         "required": true
       },
       {
         "label": "Address",
         "name": "address",
         "type": "text",
+        "error": true,
+        "message": "",
+        "value": "",
         "required": false
       }
     ],
