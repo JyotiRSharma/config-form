@@ -14,6 +14,7 @@ interface IField {
 const Form = ({ fields }: { fields: IField[] }) => {
     const [fieldValues, setFieldValues] = useState(fields);
     const [isDisabled, setIsDisabled] = useState(false);
+    const [payload, setPayload] = useState("");
 
     useEffect(() => {
         const checkErrors = () => {
@@ -51,30 +52,35 @@ const Form = ({ fields }: { fields: IField[] }) => {
         e.preventDefault();
         const payload = new Map<string, string>();
         fieldValues.forEach((field) => payload.set(field.name, field.value));
-        console.log(JSON.stringify(Object.fromEntries(payload)));
+        setPayload(JSON.stringify(Object.fromEntries(payload)));
     };
 
     return (
-        <form className="form" onSubmit={handleSubmit}>
-            {fieldValues.map((field) => {
-                return (
-                    <div key={field.name}>
-                        <label className="form-field">
-                            {field.label}
-                            <input
-                                type={field.type}
-                                name={field.name}
-                                onChange={handleChange}
-                            />
-                        </label>
-                        {field.error && (
-                            <span className="error">{field.message}</span>
-                        )}
-                    </div>
-                );
-            })}
-            <button disabled={isDisabled}>Submit</button>
-        </form>
+        <div>
+            <form className="form" onSubmit={handleSubmit}>
+                {fieldValues.map((field) => {
+                    return (
+                        <div key={field.name}>
+                            <label className="form-field">
+                                {field.label}
+                                <input
+                                    type={field.type}
+                                    name={field.name}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                            {field.error && (
+                                <span className="error">{field.message}</span>
+                            )}
+                        </div>
+                    );
+                })}
+                <button disabled={isDisabled}>Submit</button>
+            </form>
+            <div>
+                {payload}
+            </div>
+        </div>
     );
 };
 
